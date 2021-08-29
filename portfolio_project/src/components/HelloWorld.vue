@@ -1,7 +1,29 @@
 <template>
-<nav class="navbar navbar-expand-lg sticky header" id="sticky navbar" >
+<MDBNavbar light bg="light" expand="lg" container class="sticky header" id="sticky navbar"> 
+  <MDBNavbarBrand href="/">CHARMAIN PEDRIGAL</MDBNavbarBrand>
+  <div class="rightnav">
+  <MDBNavbarToggler @click="collapse1 = !collapse1" target="#navbarSupportedContent"></MDBNavbarToggler>
+  <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
+  <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </MDBCollapse>
+  </div>
+</MDBNavbar>
+<!-- <nav class="navbar navbar-expand-lg sticky header" id="sticky navbar" >
     <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="/"><img class="logo " src="/assets/img/logo4.png" alt="REthrift Logo" /></a> -->
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -18,10 +40,9 @@
           </li>
         </ul>
       </div>
-      
     </div>
-  </nav>
-  <div class="container">
+  </nav> -->
+  <!--<div class="container">
     <div class="two-column">
       <div class="grid-item">
         <br />
@@ -104,7 +125,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   
   <div class="container">
     <h3>PROJECTS</h3>
@@ -149,14 +170,25 @@
 </template>
 
 <script>
+import { MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarToggler,
+    MDBCollapse
+    } from 'mdb-vue-ui-kit';
 export default {
   name: "HelloWorld",
+  components: {
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarToggler,
+    MDBCollapse
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-nav {
+.rightnav {
     float: right;
 }
 
@@ -203,7 +235,7 @@ transition: 1s;
 background-color: gainsboro;
 }
 
-a:link {
+/* a:link {
 color: green;
 background-color: transparent;
 text-decoration: none;
@@ -225,7 +257,7 @@ a:active {
 color: yellow;
 background-color: transparent;
 text-decoration: underline;
-}
+} */
 
 .product-grid {
 display: grid;
