@@ -1,30 +1,54 @@
-.hello {
-    text-align: left;
-    padding: 10%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* body {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+} */
+
+.container {
+  text-align: left;
 }
 
 .two-column {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 10px;
 }
 
 .icons {
-    padding-right: 5%;
+  padding-right: 5%;
+  font-size: 0.50em
 }
 
 .info {
-    text-align: center;
+  text-align: center;
+}
+
+.customButtons {
+  background-color: gray;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-size: large;
+}
+
+.customButtons:hover {
+  opacity: 0.6;
+  transition: 1s;
 }
 
 .about-me {
-    background-color: gainsboro;
-    padding: 10%;
+  background-color: gainsboro;
 }
 
 a:link {
-  color: green; 
-  background-color: transparent; 
+  color: green;
+  background-color: transparent;
   text-decoration: none;
 }
 
@@ -44,4 +68,20 @@ a:active {
   color: yellow;
   background-color: transparent;
   text-decoration: underline;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 576px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
