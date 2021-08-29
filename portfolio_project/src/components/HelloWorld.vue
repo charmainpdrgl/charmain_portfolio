@@ -2,10 +2,10 @@
 <MDBNavbar light bg="light" expand="lg" container class="sticky header" id="sticky navbar"> 
   <MDBNavbarBrand href="/">CHARMAIN PEDRIGAL</MDBNavbarBrand>
   <div class="rightnav">
-  <MDBNavbarToggler @click="collapse1 = !collapse1" target="#navbarSupportedContent"></MDBNavbarToggler>
-  <MDBCollapse v-model="collapse1" id="navbarSupportedContent">
+  <MDBNavbarToggler target="#navbarSupportedContent"></MDBNavbarToggler>
+  <MDBNavbarNav collapse="navbarSupportedContent">
   <div class="container-fluid">
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/">About</a>
@@ -19,7 +19,7 @@
         </ul>
       </div>
     </div>
-  </MDBCollapse>
+  </MDBNavbarNav>
   </div>
 </MDBNavbar>
 <!-- <nav class="navbar navbar-expand-lg sticky header" id="sticky navbar" >
@@ -173,16 +173,23 @@
 import { MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
-    MDBCollapse
+    MDBNavbarNav
     } from 'mdb-vue-ui-kit';
+import { ref } from 'vue';
 export default {
   name: "HelloWorld",
   components: {
     MDBNavbar,
     MDBNavbarBrand,
     MDBNavbarToggler,
-    MDBCollapse
+    MDBNavbarNav
   },
+  setup() {
+    const collapse1 = ref(false);
+    return {
+      collapse1,
+    }
+  }
 };
 </script>
 
